@@ -38,7 +38,7 @@ impl App {
 #[no_mangle]
 pub fn run() {
     let telegram_token = env::var("telegram_token").unwrap();
-    let openai_key_name = env::var("openai_key_name").unwrap_or("jaykchen".to_string());
+    let openai_key_name = env::var("openai_key_name").unwrap_or("chatmichael".to_string());
 
     listen_to_update(telegram_token.clone(), |update| {
         handler(update, telegram_token, openai_key_name)
